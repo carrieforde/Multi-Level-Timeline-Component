@@ -77,13 +77,14 @@ module.exports = {
     ]
   },
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+    contentBase: path.join(__dirname, '/'),
     compress: true,
     port: 9000
   },
   plugins: [
     new HTMLWebpackPlugin({
-      template: path.join('./src', 'index.html')
+      template: path.join('./src', 'index.html'),
+      filename: '../index.html'
     }),
     new StyleLintPlugin(),
     new ExtractTextPlugin('main.css')

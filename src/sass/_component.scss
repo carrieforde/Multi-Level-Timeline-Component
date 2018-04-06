@@ -1,0 +1,44 @@
+// ============================================================================
+// COMPONENT
+// ============================================================================
+
+$transition__expand: all 0.5s ease-in-out;
+
+
+// ====================================
+// UTILITIES
+// ====================================
+.list-reset {
+  @include list-reset;
+}
+
+.screen-reader-text {
+  @include screen-reader-text;
+}
+
+
+// ====================================
+// ACCORDION
+// ====================================
+.accordion {
+
+  &__title {
+    display: flex;
+    margin: 0;
+  }
+  
+  &__content {
+    height: 0;
+    max-height: 0;
+    opacity: 0;
+    transition: $transition__expand;
+  }
+}
+
+
+// ====================================
+// TOGGLES
+// ====================================
+.toggle {
+  @include plus-minus-button($color-primary);
+}

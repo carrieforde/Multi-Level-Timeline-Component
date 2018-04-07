@@ -84,7 +84,7 @@ module.exports = {
   plugins: [
     new HTMLWebpackPlugin({
       template: path.join('./src', 'index.html'),
-      filename: '../index.html'
+      filename: process.env.NODE_ENV === 'production' ? '../index.html' : 'index.html'
     }),
     new StyleLintPlugin(),
     new ExtractTextPlugin('main.css')

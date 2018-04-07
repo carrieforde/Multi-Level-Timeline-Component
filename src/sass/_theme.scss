@@ -1,1 +1,102 @@
+// ============================================================================
 // THEME
+// ============================================================================
+
+$downy: #73c5cb;
+$charcoal: #414042;
+$punch: #DB4126;
+$star-dust: #9f9f9f;
+$white: #fff;
+
+$open-sans: 'Open Sans', sans-serif;
+
+#themeToggle {
+  @include button($color-primary);
+
+  color: $white;
+  padding: 0.5em 1em;
+  position: fixed;
+  right: rem(20);
+  top: rem(20);
+
+  .ai-humanity-theme & {
+    @include button($punch);
+  }
+}
+
+.ai-humanity-theme {
+  font-family: $open-sans;
+  font-size: rem(16);
+
+  @include mq-min($tablet-landscape) {
+    font-size: rem(19);
+  }
+
+  .component {
+    margin: 0 auto;
+    max-width: 100%;
+    width: rem(1010);
+
+    &__header {
+      position: relative;
+    }
+
+    &__title {
+      background-color: $downy;
+      bottom: rem(-22);
+      color: $white;
+      display: inline-block;
+      font-size: calc(0.5em + 1.77vw);
+      font-weight: 800;
+      left: rem(22);
+      letter-spacing: 0.8 / 16 * 1em;
+      margin: 0;
+      min-width: rem(170);
+      padding: rem(10) rem(24);
+      position: relative;
+      text-transform: uppercase;
+
+      @include mq-min($tablet-landscape) {
+        bottom: auto;
+        font-size: rem(16);
+        left: 170 / -2 * 1px;
+        position: absolute;
+        top: rem(-22);
+      }
+    }
+
+    &__subtitle {
+      background-color: $charcoal;
+      color: $white;
+      font-size: calc(0.5em + 4.42vw);
+      letter-spacing: 0.56 / 38 * 1em;
+      line-height: 1.1;
+      margin: 0;
+      padding: 1.2em 1.4em 0.95em;
+      text-transform: uppercase;
+
+      @include mq-min($tablet-landscape) {
+        float: left;
+        font-size: rem(38);
+      }
+    }
+
+    &__intro {
+      background-color: $punch;
+      clear: both;
+      color: $white;
+      letter-spacing: 0.96 / 19 * 1em;
+      margin: rem(32) 0;
+      padding: 1.6em 2.6em;
+
+      @include mq-min($tablet-landscape) {
+        float: right;
+        width: 80%;
+      }
+    }
+
+    &__content {
+      clear: both;
+    }
+  }
+}

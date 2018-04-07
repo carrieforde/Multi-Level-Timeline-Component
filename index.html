@@ -6,10 +6,22 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Multi-Level Timeline Component</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet">
 <link href="dist/main.css" rel="stylesheet"></head>
 
 <body>
-	<div id="app"></div>
+	<div class="content">
+		<main class="page" role="main">
+			<header class="page__header">
+				<h1 class="page__title">Multi-Level Timeline Component</h1>
+			</header>
+			<div id="app" class="page__content"></div>
+			<!-- <footer class="page__footer"></footer> -->
+		</main>
+	</div>
+	<footer class="footer">
+		<button id="themeToggle" class="button">Toggle Theme</button>
+	</footer>
 <script type="text/javascript" src="dist/bundle.js"></script></body>
 
 </html>

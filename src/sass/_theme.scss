@@ -25,6 +25,7 @@ $open-sans: 'Open Sans', sans-serif;
 }
 
 .ai-humanity-theme {
+  color: $charcoal;
   font-family: $open-sans;
   font-size: rem(16);
 
@@ -86,7 +87,7 @@ $open-sans: 'Open Sans', sans-serif;
       clear: both;
       color: $white;
       letter-spacing: 0.96 / 19 * 1em;
-      margin: rem(32) 0;
+      margin: 1.7em 0 3em;
       padding: 1.6em 2.6em;
 
       @include mq-min($tablet-landscape) {
@@ -97,6 +98,73 @@ $open-sans: 'Open Sans', sans-serif;
 
     &__content {
       clear: both;
+    }
+  } // .component
+
+  .accordion {
+
+    &__item {
+
+      &--expanded {
+
+        .accordion--level-2 {
+          margin-bottom: 5em;
+          margin-top: 3.25em;
+        }
+
+        &.accordion__item--level-3 {
+
+          .accordion__title--level-3 {
+            margin-bottom: rem(24);
+          }
+
+          .accordion__content--level-3 {
+            margin-bottom: 4.5em;
+          }
+        }
+      }
+
+      &--level-1 {
+
+        + .accordion__item--level-1 {
+          margin-top: 4.75em;
+        }
+      }
+
+      &--level-2 {
+
+        &.accordion__item--expanded {
+
+          .accordion--level-3 {
+            margin-top: 2.5em;
+          }
+        }
+      }
+    }
+
+    &__title {
+      letter-spacing: 0.025em;
+
+      &--level-1,
+      &--level-3 { // stylelint-disable-line no-descending-specificity
+        text-transform: uppercase;
+      }
+
+      &--level-1 {
+        font-size: calc(0.5em + 4.42vw);
+
+        @include mq-min($tablet-landscape) {
+          font-size: rem(38);
+        }
+      }
+
+      &--level-2 {
+        font-size: calc(0.5em + 3.33vw);
+
+        @include mq-min($tablet-landscape) {
+          font-size: rem(30);
+        }
+      }
     }
   }
 }

@@ -1,7 +1,8 @@
 const path = require('path'),
   ExtractTextPlugin = require('extract-text-webpack-plugin'),
   HTMLWebpackPlugin = require('html-webpack-plugin'),
-  StyleLintPlugin = require('stylelint-webpack-plugin');
+  StyleLintPlugin = require('stylelint-webpack-plugin'),
+  SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 
 module.exports = {
   context: __dirname,
@@ -87,6 +88,7 @@ module.exports = {
       filename: process.env.NODE_ENV === 'production' ? '../index.html' : 'index.html'
     }),
     new StyleLintPlugin(),
-    new ExtractTextPlugin('main.css')
+    new ExtractTextPlugin('main.css'),
+    new SpriteLoaderPlugin()
   ]
 };
